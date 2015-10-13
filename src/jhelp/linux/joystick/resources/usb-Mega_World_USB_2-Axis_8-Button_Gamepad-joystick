@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JoystickSettings name="ThrustMaster">
+   <Axis id="0" name="X_AXIS"/>
+   <Axis id="1" name="Y_AXIS"/>
+   <Button id="0" name="BUTTON_DOWN"/>
+   <Button id="1" name="BUTTON_LEFT"/>
+   <Button id="2" name="BUTTON_RIGHT"/>
+   <Button id="3" name="BUTTON_UP"/>
+   <Button id="4" name="SIDE_LEFT_UP"/>
+   <Button id="5" name="SIDE_LEFT_DOWN"/>
+   <Button id="6" name="SIDE_RIGHT_UP"/>
+   <Button id="7" name="SIDE_RIGHT_DOWN"/>
+</JoystickSettings>
