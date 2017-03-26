@@ -100,7 +100,7 @@ public class JoystickChooserFrame
    @Override
    public void valueChanged(final ListSelectionEvent event)
    {
-      if(event.getValueIsAdjusting() == true)
+      if(event.getValueIsAdjusting())
       {
          return;
       }

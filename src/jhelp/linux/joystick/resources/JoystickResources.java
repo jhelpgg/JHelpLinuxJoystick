@@ -47,7 +47,7 @@ public class JoystickResources
       RESOURCES_INTERNAL = new Resources(JoystickResources.class);
       EXTERNAL_DIRECTORY = new File(UtilIO.obtainHomeDirectory(), "JHelp/Joystick/settings");
 
-      if(UtilIO.createDirectory(JoystickResources.EXTERNAL_DIRECTORY) == false)
+      if(!UtilIO.createDirectory(JoystickResources.EXTERNAL_DIRECTORY))
       {
          Debug.println(DebugLevel.ERROR, "Can't create external directory : ", JoystickResources.EXTERNAL_DIRECTORY.getAbsolutePath());
          throw new RuntimeException("Can't create external directory : " + JoystickResources.EXTERNAL_DIRECTORY.getAbsolutePath());
@@ -75,7 +75,7 @@ public class JoystickResources
    {
       final File settings = new File(JoystickResources.EXTERNAL_DIRECTORY, settingsName);
 
-      if(settings.exists() == false)
+      if(!settings.exists())
       {
          final InputStream stream = JoystickResources.RESOURCES_INTERNAL.obtainResourceStream(settingsName);
 
@@ -99,7 +99,7 @@ public class JoystickResources
             {
                stream.close();
             }
-            catch(final Exception exception)
+            catch(final Exception ignored)
             {
             }
          }
@@ -125,7 +125,7 @@ public class JoystickResources
             {
                stream.close();
             }
-            catch(final Exception exception)
+            catch(final Exception ignored)
             {
             }
          }
@@ -144,7 +144,7 @@ public class JoystickResources
    {
       final File settings = new File(JoystickResources.EXTERNAL_DIRECTORY, joystick.getOfficialName());
 
-      if(UtilIO.createFile(settings) == false)
+      if(!UtilIO.createFile(settings))
       {
          Debug.println(DebugLevel.ERROR, "Can't create file : ", settings.getAbsolutePath());
          throw new IOException("Can't create file : " + settings.getAbsolutePath());
@@ -170,7 +170,7 @@ public class JoystickResources
             {
                outputStream.flush();
             }
-            catch(final Exception exception)
+            catch(final Exception ignored)
             {
             }
 
@@ -178,7 +178,7 @@ public class JoystickResources
             {
                outputStream.close();
             }
-            catch(final Exception exception)
+            catch(final Exception ignored)
             {
             }
          }

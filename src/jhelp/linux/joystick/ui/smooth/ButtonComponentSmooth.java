@@ -187,7 +187,7 @@ public class ButtonComponentSmooth
    {
       this.nameEditText.setText(this.button.getName());
 
-      if(this.button.isDown() == true)
+      if(this.button.isDown())
       {
          this.stateText.setText("DOWN");
       }

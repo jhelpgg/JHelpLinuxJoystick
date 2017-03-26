@@ -115,11 +115,6 @@ public enum AxisType
       {
          type = AxisType.valueOf(axis.getName());
 
-         if(type == null)
-         {
-            return UNKNOWN;
-         }
-
          return type;
       }
       catch(final Exception exception)

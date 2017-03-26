@@ -59,7 +59,8 @@ public class JoystickManager
       @Override
       public boolean accept(final File file)
       {
-         return JoystickManager.PATTERN_JOYSTICK_PIPE_NAME.matcher(file.getName()).matches() == true;
+         return JoystickManager.PATTERN_JOYSTICK_PIPE_NAME.matcher(file.getName())
+                                                          .matches();
       }
    }
 
@@ -86,7 +87,8 @@ public class JoystickManager
          final File directory = new File(JoystickManager.BASE_PATH);
          final JoystickNameFilter filter = new JoystickNameFilter();
 
-         for(final File file : directory.listFiles(filter))
+          //noinspection ConstantConditions
+          for(final File file : directory.listFiles(filter))
          {
             this.addJoystick(file);
          }
@@ -129,18 +131,20 @@ public class JoystickManager
    {
       final File directory = new File(JoystickManager.ID_PATH);
 
+      //noinspection ConstantConditions
       for(final File link : directory.listFiles())
       {
-         if(UtilIO.isVirtualLink(link) == true)
+         if(UtilIO.isVirtualLink(link))
          {
             try
             {
-               if(link.getCanonicalPath().equals(file.getAbsolutePath()) == true)
+               if(link.getCanonicalPath()
+                      .equals(file.getAbsolutePath()))
                {
                   return link.getAbsoluteFile().getName();
                }
             }
-            catch(final Exception exception)
+            catch(final Exception ignored)
             {
             }
          }

@@ -137,11 +137,6 @@ public enum ButtonType
       {
          type = ButtonType.valueOf(button.getName());
 
-         if(type == null)
-         {
-            return UNKNOWN;
-         }
-
          return type;
       }
       catch(final Exception exception)

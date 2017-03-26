@@ -358,7 +358,7 @@ public class JoystickSettingsComponentSwing
    @Override
    public void valueChanged(final ListSelectionEvent listSelectionEvent)
    {
-      if((listSelectionEvent.getValueIsAdjusting() == true) || (listSelectionEvent.getFirstIndex() < 0))
+      if((listSelectionEvent.getValueIsAdjusting()) || (listSelectionEvent.getFirstIndex() < 0))
       {
          return;
       }
@@ -374,7 +374,6 @@ public class JoystickSettingsComponentSwing
       if(this.buttonsList == source)
       {
          ThreadManager.THREAD_MANAGER.doThread(this.taskEditButtonName, this.buttonsList.getSelectedValue());
-         return;
       }
    }
 }

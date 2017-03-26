@@ -144,13 +144,13 @@ class JoystickSettingsParser
    @Override
    public void startMakup(final String markupName, final Hashtable<String, String> parameters) throws ExceptionXML
    {
-      if(JoystickSettings.MARKUP_JOYSTICK_SETTINGS.equals(markupName) == true)
+      if(JoystickSettings.MARKUP_JOYSTICK_SETTINGS.equals(markupName))
       {
          this.joystickSettings.setJoystickName(ParserXML.obtainParameter(markupName, parameters, JoystickSettings.PARAMETER_NAME, false));
          return;
       }
 
-      if(JoystickSettings.MARKUP_BUTTON.equals(markupName) == true)
+      if(JoystickSettings.MARKUP_BUTTON.equals(markupName))
       {
          final int id = ParserXML.obtainInteger(markupName, parameters, JoystickSettings.PARAMETER_ID, true, 0);
          final String name = ParserXML.obtainParameter(markupName, parameters, JoystickSettings.PARAMETER_NAME, true);
@@ -158,12 +158,11 @@ class JoystickSettingsParser
          return;
       }
 
-      if(JoystickSettings.MARKUP_AXIS.equals(markupName) == true)
+      if(JoystickSettings.MARKUP_AXIS.equals(markupName))
       {
          final int id = ParserXML.obtainInteger(markupName, parameters, JoystickSettings.PARAMETER_ID, true, 0);
          final String name = ParserXML.obtainParameter(markupName, parameters, JoystickSettings.PARAMETER_NAME, true);
          this.joystickSettings.putAxis(id, name);
-         return;
       }
    }
 

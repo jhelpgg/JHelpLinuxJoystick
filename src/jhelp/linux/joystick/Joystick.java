@@ -278,7 +278,7 @@ public final class Joystick
 
          this.messageRead(this.buffer[4], this.buffer[5], ((this.buffer[6] & 0xFF) << 8) | (this.buffer[7] & 0xFF));
 
-         if(this.alive == true)
+         if(this.alive)
          {
             ThreadManager.THREAD_MANAGER.doThread(this.eventManager, null);
          }
@@ -380,7 +380,8 @@ public final class Joystick
    {
       for(final Axis axis : this.axis)
       {
-         if(axis.getName().equals(name) == true)
+         if(axis.getName()
+                .equals(name))
          {
             return axis;
          }
@@ -400,7 +401,8 @@ public final class Joystick
    {
       for(final Button button : this.buttons)
       {
-         if(button.getName().equals(name) == true)
+         if(button.getName()
+                  .equals(name))
          {
             return button;
          }
@@ -435,7 +437,7 @@ public final class Joystick
 
       synchronized(this.joystickListeners)
       {
-         if(this.joystickListeners.contains(joystickListener) == false)
+         if(!this.joystickListeners.contains(joystickListener))
          {
             this.joystickListeners.add(joystickListener);
          }
